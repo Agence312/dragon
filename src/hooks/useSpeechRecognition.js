@@ -6,18 +6,15 @@ export default function useSpeechRecognition({ onFinal, lang='fr-FR' }){
   useEffect(()=>{
     const SR = window.SpeechRecognition || window.webkitSpeechRecognition
     if (!SR) return
-    const rec = new SR()
-    rec.lang = lang
-    rec.interimResults = true
-    rec.continuous = false
+    const rec = new SR(); rec.lang = lang; rec.interimResults = true; rec.continuous = false
     rec.onresult = (e)=>{
-      let final = ''
-      for (let i=0;i<e.results.length;i++){ const res = e.results[i]; if (res.isFinal) final += res[0].transcript }
+      let final=''
+      for(let i=0;i<e.results.length;i++){ const res=e.results[i]; if(res.isFinal) final += res[0].transcript }
       if (final.trim()) onFinal(final)
     }
     rec.onend = ()=> setListening(false)
-    recognitionRef.current = rec
-    setSupported(true)
+    recognitionRef.current = rec; setSupported(true)
+    return ()=>{ try{ rec.abort() }catch{} }
   }, [lang, onFinal])
   const start = ()=>{ if (recognitionRef.current && !listening){ setListening(true); recognitionRef.current.start() } }
   const stop  = ()=>{ if (recognitionRef.current && listening){ recognitionRef.current.stop() } }

@@ -1,44 +1,21 @@
 :root{
   --bg:#0b1220; --panel:#101827; --muted:#94a3b8; --text:#e5e7eb;
-  --accent-start:#3b82f6; --accent-end:#06b6d4; --chip:#1f2937;
-  --halo-alpha: .18;
 }
-*{ box-sizing:border-box; }
+*{ box-sizing:border-box }
 html,body,#root{ height:100% }
-body{ margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, 'Apple Color Emoji';
-  background:radial-gradient(1400px 700px at 50% -5%, #0e182d 0, #0a0f1a 55%, #080d16 100%);
-  color:var(--text); color-scheme:dark;
-}
-a{ color:inherit }
+body{ margin:0; font-family: system-ui, sans-serif; background:#0b1220; color:var(--text) }
 .m-page{ min-height:100svh; display:flex; flex-direction:column }
-.m-top{ position:sticky; top:0; z-index:10; display:flex; justify-content:space-between; align-items:center; gap:8px;
-  padding:12px 16px; background:rgba(10,15,26,.65); backdrop-filter:saturate(140%) blur(6px); border-bottom:1px solid #1f2937;
-}
-.m-top .title{ font-weight:800 }
-.m-main{ display:flex; flex-direction:column; gap:12px; padding:12px; padding-bottom:calc(12px + env(safe-area-inset-bottom)); }
-.m-hero{ display:flex; flex-direction:column; align-items:center; gap:8px }
-.hero{ position:relative; width:100%; max-width:520px; aspect-ratio:1/1; border-radius:24px;
-  background:linear-gradient(135deg,#1f2937,#0f172a); border:1px solid #223047;
-  box-shadow:0 10px 40px rgba(0,0,0,.25); overflow:hidden;
-}
-.halo{ position:absolute; inset:0; background:radial-gradient(circle at 50% 60%, rgba(96,165,250,var(--halo-alpha)), transparent 60%); opacity:1; pointer-events:none; }
-.dragon{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; }
-.chips{ display:flex; gap:6px; flex-wrap:wrap }
-.chip{ background:var(--chip); padding:6px 10px; border-radius:999px; border:1px solid #223047; font-size:12px }
-.chip.alt{ background:#111827 }
-.m-log{ height:36svh; min-height:200px; overflow:auto; border-radius:16px; background:linear-gradient(180deg,#0c1322,#0a101b); border:1px solid #223047; padding:10px }
-.m-msg{ max-width:86%; padding:10px 12px; border-radius:14px; margin:6px 0; line-height:1.35 }
-.m-msg.system{ background:rgba(255,255,255,.03); border:1px solid #1e293b }
-.m-msg.you{ background:rgba(34,197,94,.08); border:1px solid #1b4d2c; margin-left:auto }
-.m-msg.dragon{ background:rgba(96,165,250,.10); border:1px solid #1e3a8a }
-.m-bottom{ position:sticky; bottom:0; display:flex; flex-direction:column; gap:10px; padding-bottom:calc(6px + env(safe-area-inset-bottom)) }
+.m-top{ padding:12px 16px; background:#0b1220; border-bottom:1px solid #1f2937; display:flex; justify-content:space-between }
+.m-main{ flex:1; display:flex; flex-direction:column; gap:12px; padding:12px }
+.hero{ position:relative; width:100%; aspect-ratio:1/1; background:#101827; border:1px solid #223047; border-radius:24px; overflow:hidden; display:flex; align-items:center; justify-content:center }
+.m-log{ flex:1; overflow:auto; background:#0c1322; border-radius:16px; padding:10px }
+.m-msg{ margin:6px 0; padding:8px 10px; border-radius:12px }
+.m-msg.system{ background:rgba(255,255,255,.05) }
+.m-msg.you{ background:rgba(34,197,94,.1) }
+.m-msg.dragon{ background:rgba(96,165,250,.1) }
+.m-bottom{ padding:10px 0; display:flex; flex-direction:column; gap:10px }
 .m-actions{ display:grid; grid-template-columns:repeat(4,1fr); gap:8px }
-.m-actions button{ padding:12px 8px; border-radius:12px; border:1px solid #223047; background:#0d1728; color:var(--text) }
-.m-composer{ display:grid; grid-template-columns:1fr auto auto; gap:8px }
-.m-composer input{ padding:12px 14px; border-radius:12px; border:1px solid #223047; background:#0d1728; color:var(--text) }
-.primary{ padding:12px 14px; border-radius:12px; border:none; background:linear-gradient(90deg,var(--accent-start),var(--accent-end)); color:#06121e; font-weight:800 }
-.mic{ padding:12px 14px; border-radius:12px; border:1px solid #223047; background:#0d1728 }
-.mic.on{ outline:2px solid var(--accent-start) }
-.statbar{ height:8px; background:#0f172a; border-radius:999px; border:1px solid #223047; overflow:hidden }
-.statfill{ height:100%; background:linear-gradient(90deg,var(--accent-start),var(--accent-end)) }
-@media (min-width: 860px){ .m-main{ max-width:860px; margin:0 auto } }
+.m-actions button{ padding:12px; border-radius:12px; background:#0d1728; color:#fff; font-size:20px }
+.m-composer{ display:grid; grid-template-columns:1fr auto; gap:8px }
+.m-composer input{ padding:10px; border-radius:12px; border:1px solid #223047; background:#0d1728; color:#fff }
+.primary{ background:#3b82f6; border:none; border-radius:12px; padding:10px 14px; color:#fff; font-weight:600 }
