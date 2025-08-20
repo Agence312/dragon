@@ -1,0 +1,13 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "no-cache"
