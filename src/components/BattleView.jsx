@@ -56,7 +56,7 @@ export default function BattleView({ state, onEnd, onGain }){
   return (
     <div className="panel">
       <div className="enemy">
-        <div><div className="name">{enemy.name}</div><div className="hpbar"><div className="hp" style={{ width: (enemyHP/enemy.max*100)+'%' }}/></div></div>
+        <div><div className="name">{enemy.name}</div><div className="hpbar"><div className="hp" style={{ width: (enemyHP/enemy.max*100)+'%' }}></div></div>
         </div>
         <div>{ELEMENT_LABEL[enemy.element]}</div>
       </div>
