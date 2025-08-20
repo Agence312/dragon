@@ -3,7 +3,7 @@ import DragonSprite from './components/DragonSprite.jsx'
 import useSpeechRecognition from './hooks/useSpeechRecognition.js'
 
 const STAGES={egg:'egg', hatch:'hatchling', juv:'juvenile', adult:'adult'}
-const initial={stage:STAGES.egg,xp:0,log:[{who:'system',text:'Un œuf mystérieux. Parle-lui ou tape dessus pour l'aider à éclore.'}]}
+const initial={stage:STAGES.egg,xp:0,log:[{who:'system',text:'Un œuf mystérieux. Parle-lui ou tape dessus pour l\'aider à éclore.'}]}
 
 function reducer(state,action){
   switch(action.type){
