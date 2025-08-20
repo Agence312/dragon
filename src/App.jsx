@@ -245,7 +245,7 @@ export default function App(){
     if (canEvolve(dragon)) {
       const evo = evolve(dragon)
       setDragon(evo)
-      pushLog('dragon', `✨ ${evo.stage === 'BEBE' ? 'Je suis né !' : 'J\\'évolue !'} (${evo.stage})`)
+      pushLog('dragon', `✨ ${evo.stage === 'BEBE' ? 'Je suis né !' : 'J\'évolue !'} (${evo.stage})`)
     } else {
       pushLog('dragon', 'Pas encore prêt à évoluer…')
     }
